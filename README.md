@@ -7,20 +7,22 @@
     <style>
         :root {
             --bg: #ffffff;
-            --text: #2c3e50;
-            --card-bg: #f8f9fa;
-            --border: #e1e4e8;
-            --accent: #e74c3c;
-            --hover: #f5f5f5;
+            --text: #1a1a1a;
+            --card-bg: #f5f5f5;
+            --border: #d0d0d0;
+            --accent: #5d3a6f;
+            --hover-bg: #5d3a6f;
+            --hover-text: #ffffff;
         }
 
         [data-theme="dark"] {
-            --bg: #1a1a1a;
-            --text: #e0e0e0;
-            --card-bg: #2d2d2d;
-            --border: #404040;
-            --accent: #ff6b6b;
-            --hover: #3a3a3a;
+            --bg: #0a0a0a;
+            --text: #e8e8e8;
+            --card-bg: #1a1a1a;
+            --border: #2a2a2a;
+            --accent: #7d5a8f;
+            --hover-bg: #7d5a8f;
+            --hover-text: #ffffff;
         }
 
         * {
@@ -30,89 +32,103 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: var(--bg);
             color: var(--text);
             transition: background 0.3s, color 0.3s;
-            padding: 20px;
+            padding: 40px 20px;
             line-height: 1.6;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         header {
-            text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         h1 {
-            font-size: 2.5em;
+            font-size: 3em;
             margin-bottom: 10px;
             color: var(--accent);
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: var(--text);
+            opacity: 0.8;
         }
 
         .rules {
             background: var(--card-bg);
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            border: 1px solid var(--border);
+            padding: 30px;
+            margin-bottom: 40px;
+            border: 2px solid var(--border);
         }
 
         .rules h2 {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            color: var(--accent);
+            font-size: 1.5em;
         }
 
         .rules ol {
-            margin-left: 20px;
+            margin-left: 25px;
         }
 
         .rules li {
-            margin: 10px 0;
+            margin: 15px 0;
+        }
+
+        .rules ul {
+            margin: 10px 0 10px 25px;
         }
 
         .controls {
             display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
+            gap: 20px;
+            margin-bottom: 30px;
             flex-wrap: wrap;
-            align-items: center;
         }
 
         .theme-toggle {
             background: var(--accent);
             color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
+            border: 2px solid var(--accent);
+            padding: 12px 24px;
             cursor: pointer;
             font-size: 16px;
-            transition: opacity 0.3s;
+            font-weight: 600;
+            transition: background 0.4s, color 0.4s;
         }
 
         .theme-toggle:hover {
-            opacity: 0.9;
+            background: var(--bg);
+            color: var(--accent);
         }
 
         .search-box {
             flex: 1;
-            min-width: 200px;
-            padding: 10px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
+            min-width: 250px;
+            padding: 12px;
+            border: 2px solid var(--border);
             background: var(--card-bg);
             color: var(--text);
             font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: var(--accent);
         }
 
         .table-container {
             overflow-x: auto;
-            background: var(--card-bg);
-            border-radius: 12px;
-            border: 1px solid var(--border);
+            border: 2px solid var(--border);
         }
 
         table {
@@ -123,21 +139,28 @@
         th {
             background: var(--accent);
             color: white;
-            padding: 15px;
+            padding: 16px;
             text-align: left;
             cursor: pointer;
             user-select: none;
-            position: sticky;
-            top: 0;
+            font-weight: 600;
+            border-right: 2px solid rgba(255,255,255,0.2);
+            transition: background 0.4s, color 0.4s;
+        }
+
+        th:last-child {
+            border-right: none;
         }
 
         th:hover {
-            opacity: 0.9;
+            background: var(--bg);
+            color: var(--accent);
         }
 
         th::after {
             content: ' ⇅';
-            opacity: 0.5;
+            opacity: 0.6;
+            margin-left: 5px;
         }
 
         th.sort-asc::after {
@@ -151,22 +174,44 @@
         }
 
         td {
-            padding: 15px;
+            padding: 16px;
             border-bottom: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+            transition: background 0.4s, color 0.4s;
         }
 
-        tr:hover {
-            background: var(--hover);
+        td:last-child {
+            border-right: none;
+        }
+
+        tbody tr {
+            background: var(--bg);
+            transition: background 0.4s, color 0.4s;
+        }
+
+        tbody tr:hover {
+            background: var(--hover-bg);
+            color: var(--hover-text);
+        }
+
+        tbody tr:hover a {
+            color: var(--hover-text);
         }
 
         .rating {
-            font-weight: bold;
+            font-weight: 700;
             color: var(--accent);
+        }
+
+        tbody tr:hover .rating {
+            color: var(--hover-text);
         }
 
         a {
             color: var(--accent);
             text-decoration: none;
+            font-weight: 600;
+            transition: color 0.4s;
         }
 
         a:hover {
@@ -175,11 +220,11 @@
 
         @media (max-width: 768px) {
             h1 {
-                font-size: 1.8em;
+                font-size: 2em;
             }
             
             th, td {
-                padding: 10px;
+                padding: 12px 8px;
                 font-size: 14px;
             }
         }
@@ -188,8 +233,8 @@
 <body>
     <div class="container">
         <header>
-            <h1>🍕 Pablo and Felix' Pizza Review Site</h1>
-            <p>We rate pizza restaurants on this site.</p>
+            <h1>🍕 Pablo and Felix' Pizza Reviews</h1>
+            <p class="subtitle">Rating pizzas, one slice at a time</p>
         </header>
 
         <div class="rules">
