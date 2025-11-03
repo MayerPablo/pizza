@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensa Review - Pablo and Felix' Pizza Reviews</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="index.html">← Back to All Reviews</a>
+        </nav>
+
+        <header>
+            <h1>🍕 Mensa Institutsviertel</h1>
+            <p class="subtitle">Freiburg</p>
+        </header>
+
+        <div class="detail-card">
+            <h2>Overview</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>Pizza Type:</strong> Margherita (Buffet)
+                </div>
+                <div class="info-item">
+                    <strong>Date Reviewed:</strong> October 2024
+                </div>
+                <div class="info-item">
+                    <strong>Website:</strong> <a href="https://www.swfr.de/essen/mensen-cafes-speiseplaene/freiburg/mensa-institutsviertel" target="_blank">Visit</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="detail-card">
+            <h2>Ratings</h2>
+            <div class="ratings-grid">
+                <div class="rating-category">
+                    <h3>General Quality (GQ)</h3>
+                    <div class="rating-large">5.0</div>
+                    <div class="individual-ratings">
+                        <div class="individual-rating">
+                            <span class="rater">Pablo:</span> <span class="score">5.0</span>
+                        </div>
+                        <div class="individual-rating">
+                            <span class="rater">Felix:</span> <span class="score">5.0</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rating-category">
+                    <h3>Value Offered (VO)</h3>
+                    <div class="rating-large">7.0</div>
+                    <div class="individual-ratings">
+                        <div class="individual-rating">
+                            <span class="rater">Pablo:</span> <span class="score">7.0</span>
+                        </div>
+                        <div class="individual-rating">
+                            <span class="rater">Felix:</span> <span class="score">7.0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="detail-card">
+            <h2>Notes</h2>
+            <p>This is the reference pizza for our rating system. All other pizzas are compared to this baseline. Price: 5.9€ (as of 01.11.2025).</p>
+        </div>
+
+        <div class="detail-card">
+            <h2>Pictures</h2>
+            <div class="picture-gallery">
+                <p class="placeholder">Pictures coming soon...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</body>
+</html>
