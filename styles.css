@@ -333,3 +333,64 @@ a:hover {
         font-size: 3em;
     }
 }
+
+.pizzas-info {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 2px solid var(--border);
+}
+
+.pizzas-info h3 {
+    color: var(--accent);
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.pizza-details {
+    display: grid;
+    gap: 12px;
+}
+
+.pizza-item {
+    padding: 12px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+}
+
+.picture-item {
+    margin: 0;
+}
+
+.picture-item img {
+    width: 100%;
+    height: auto;
+    border: 2px solid var(--border);
+    display: block;
+}
+
+.picture-item figcaption {
+    padding: 10px;
+    background: var(--card-bg);
+    border: 2px solid var(--border);
+    border-top: none;
+    text-align: center;
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+.process {
+    background: var(--card-bg);
+    padding: 25px;
+    margin-bottom: 30px;
+    border: 2px solid var(--border);
+}
+
+.process h4 {
+    color: var(--accent);
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.process p {
+    line-height: 1.8;
+}

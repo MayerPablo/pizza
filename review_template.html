@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Review - Pablo and Felix' Pizza Reviews</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="index.html">← Back to All Reviews</a>
+        </nav>
+
+        <header>
+            <h1 id="restaurantName">🍕 Loading...</h1>
+            <p class="subtitle" id="restaurantLocation"></p>
+        </header>
+
+        <div class="detail-card">
+            <h2>Overview</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>Pizza Types:</strong> <span id="pizzaTypes"></span>
+                </div>
+                <div class="info-item">
+                    <strong>Last Visited:</strong> <span id="dateLastVisited"></span>
+                </br>
+                    <strong>First Visited:</strong> <span id="dateFirstVisited"></span>
+                </div>
+
+                <div class="info-item">
+                    <strong>Website:</strong> <a id="websiteLink" href="" target="_blank">Visit</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="detail-card">
+            <h2>Ratings</h2>
+            <div class="ratings-grid">
+                <div class="rating-category">
+                    <h3>General Quality (GQ)</h3>
+                    <div class="rating-large" id="gqAvg">-</div>
+                    <div class="individual-ratings">
+                        <div class="individual-rating">
+                            <span class="rater">Pablo:</span> <span class="score" id="gqPablo">-</span>
+                            <span class="price" id="pricePabloGQ"></span>
+                        </div>
+                        <div class="individual-rating">
+                            <span class="rater">Felix:</span> <span class="score" id="gqFelix">-</span>
+                            <span class="price" id="priceFelixGQ"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rating-category">
+                    <h3>Value Offered (VO)</h3>
+                    <div class="rating-large" id="voAvg">-</div>
+                    <div class="individual-ratings">
+                        <div class="individual-rating">
+                            <span class="rater">Pablo:</span> <span class="score" id="voPablo">-</span>
+                            <span class="price" id="pricePabloVO"></span>
+                        </div>
+                        <div class="individual-rating">
+                            <span class="rater">Felix:</span> <span class="score" id="voFelix">-</span>
+                            <span class="price" id="priceFelixVO"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="detail-card">
+            <h2>Notes</h2>
+            <p id="notes">Loading...</p>
+        </div>
+
+        <div class="detail-card">
+            <h2>Pictures</h2>
+            <div class="picture-gallery" id="pictureGallery">
+                <p class="placeholder">Pictures coming soon...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+
+        const PICTURES_PATH = 'pictures/';
+
+        function calculateAverage(rating) {
+            if (rating.pablo === null || rating.felix === null) return "TBD";
+            return ((rating.pablo + rating.felix) / 2).toFixed(1);
+        }
+
+        function formatPrice(price) {
+            if (price === null) return '';
+            return `(${price.toFixed(2)}€)`;
+        }
+
+        async function loadRestaurant() {
+            try {
+                const urlParams = new URLSearchParams(window.location.search);
+                const restaurantId = urlParams.get('id');
+
+                if (!restaurantId) {
+                    document.getElementById('restaurantName').textContent = '🍕 No Restaurant Selected';
+                    return;
+                }
+
+                const response = await fetch('restaurants.json');
+                const restaurants = await response.json();
+                const restaurant = restaurants[restaurantId];
+
+                if (restaurant) {
+                    document.title = restaurant.name + ' Review - Pablo and Felix\' Pizza Reviews';
+                    document.getElementById('restaurantName').textContent = '🍕 ' + restaurant.name;
+                    document.getElementById('restaurantLocation').textContent = restaurant.location;
+                    document.getElementById('pizzaTypes').textContent = restaurant.pizzas.pablo.type + ', ' + restaurant.pizzas.felix.type;
+                    document.getElementById('dateLastVisited').textContent = restaurant.dateLastVisited;
+                    if (restaurant.dateFirstVisited) {
+                        document.getElementById('dateFirstVisited').textContent = restaurant.dateFirstVisited;
+                    } else {
+                        document.getElementById('dateFirstVisited').textContent = restaurant.dateLastVisited;
+                    }
+                    document.getElementById('websiteLink').href = restaurant.website;
+                    
+                    document.getElementById('gqAvg').textContent = calculateAverage(restaurant.gq);
+                    document.getElementById('gqPablo').textContent = restaurant.gq.pablo !== null ? restaurant.gq.pablo : '-';
+                    document.getElementById('gqFelix').textContent = restaurant.gq.felix !== null ? restaurant.gq.felix : '-';
+                    
+                    document.getElementById('voAvg').textContent = calculateAverage(restaurant.vo);
+                    document.getElementById('voPablo').textContent = restaurant.vo.pablo !== null ? restaurant.vo.pablo : '-';
+                    document.getElementById('voFelix').textContent = restaurant.vo.felix !== null ? restaurant.vo.felix : '-';
+                    
+                    if (restaurant.prices) {
+                        document.getElementById('pricePabloGQ').textContent = formatPrice(restaurant.prices.pablo);
+                        document.getElementById('priceFelixGQ').textContent = formatPrice(restaurant.prices.felix);
+                        document.getElementById('pricePabloVO').textContent = formatPrice(restaurant.prices.pablo);
+                        document.getElementById('priceFelixVO').textContent = formatPrice(restaurant.prices.felix);
+                    }
+                    
+                    document.getElementById('notes').textContent = restaurant.notes;
+                    
+                    if (restaurant.pictures.length > 0) {
+                        const gallery = document.getElementById('pictureGallery');
+                        gallery.innerHTML = '';
+                        restaurant.pictures.forEach(pic => {
+                            const figure = document.createElement('figure');
+                            figure.className = 'picture-item';
+                            
+                            const img = document.createElement('img');
+                            img.src = PICTURES_PATH + pic.filename;
+                            img.alt = pic.caption;
+                            
+                            const figcaption = document.createElement('figcaption');
+                            figcaption.textContent = `${pic.caption} - ${pic.date}`;
+                            
+                            figure.appendChild(img);
+                            figure.appendChild(figcaption);
+                            gallery.appendChild(figure);
+                        });
+                    }
+                } else {
+                    document.getElementById('restaurantName').textContent = '🍕 Restaurant Not Found';
+                }
+            } catch (error) {
+                console.error('Error loading restaurant:', error);
+                document.getElementById('restaurantName').textContent = '🍕 Error Loading Restaurant';
+            }
+        }
+
+        loadRestaurant();
+    </script>
+</body>
+</html>

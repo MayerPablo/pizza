@@ -1,0 +1,238 @@
+{
+  "0000": {
+    "id": "0000",
+    "name": "Mensa",
+    "location": "Freiburg",
+    "dateLastVisited": "October 2024",
+    "dateFirstVisited": "October 2024",
+    "website": "https://www.swfr.de/essen/mensen-cafes-speiseplaene/freiburg/mensa-institutsviertel",
+    "pizzas": {
+      "pablo": {
+        "type": "Margherita",
+        "price": 5.9
+      },
+      "felix": {
+        "type": "Black Olives",
+        "price": 5.9
+      }
+    },
+    "gq": {
+      "pablo": 5.0,
+      "felix": 5.0
+    },
+    "vo": {
+      "pablo": 5.0,
+      "felix": 5.0
+    },
+    "notes": "This is the reference pizza for our rating system. All other pizzas are compared to this baseline.",
+    "pictures": [
+      {
+        "filename": "mensa_1.jpg",
+        "caption": "Margherita",
+        "date": "October 2024"
+      },
+      {
+        "filename": "mensa_2.jpg",
+        "caption": "Black Olives",
+        "date": "October 2024"
+      }
+    ]
+  },
+  "0001": {
+    "id": "0001",
+    "name": "Pizza 47",
+    "location": "Freiburg",
+    "dateLastVisited": "November 2024",
+    "dateFirstVisited": null,
+    "website": "https://www.instagram.com/fortyseven_pizza/?hl=de",
+    "pizzas": {
+      "pablo": {
+        "type": "Margherita",
+        "price": 8.5
+      },
+      "felix": {
+        "type": "Margherita",
+        "price": 8.5
+      }
+    },
+    "gq": {
+      "pablo": 9.0,
+      "felix": 9.2
+    },
+    "vo": {
+      "pablo": 9.4,
+      "felix": 9.6
+    },
+    "notes": "Outstanding pizza with excellent quality ingredients and perfect execution. The dough was perfectly fermented with great texture and flavor. Exceptional value for the price.",
+    "pictures": [
+      {
+        "filename": "pizza47_1.jpg",
+        "caption": "Margherita",
+        "date": "November 2024"
+      },
+      {
+        "filename": "pizza47_2.jpg",
+        "caption": "Margherita - Crust detail",
+        "date": "November 2024"
+      }
+    ]
+  },
+  "0002": {
+    "id": "0002",
+    "name": "Primo Market",
+    "location": "Freiburg",
+    "dateLastVisited": "To be reviewed",
+    "dateFirstVisited": null,
+    "website": "https://www.google.com/search?q=primo+market+freiburg",
+    "pizzas": {
+      "pablo": {
+        "type": null,
+        "price": null
+      },
+      "felix": {
+        "type": null,
+        "price": null
+      }
+    },
+    "gq": {
+      "pablo": null,
+      "felix": null
+    },
+    "vo": {
+      "pablo": null,
+      "felix": null
+    },
+    "notes": "Review coming soon...",
+    "pictures": []
+  },
+  "0003": {
+    "id": "0003",
+    "name": "GIOIA mia L'OFFICUCINA",
+    "location": "Freiburg",
+    "dateLastVisited": "To be reviewed",
+    "dateFirstVisited": null,
+    "website": "https://www.gioiamia.de/",
+    "pizzas": {
+      "pablo": {
+        "type": null,
+        "price": null
+      },
+      "felix": {
+        "type": null,
+        "price": null
+      }
+    },
+    "gq": {
+      "pablo": null,
+      "felix": null
+    },
+    "vo": {
+      "pablo": null,
+      "felix": null
+    },
+    "notes": "Review coming soon...",
+    "pictures": []
+  },
+  "0004": {
+    "id": "0004",
+    "name": "Casa Ribelle",
+    "location": "Freiburg",
+    "dateLastVisited": "Oktober 2025",
+    "dateFirstVisited": "Oktober 2025",
+    "website": "https://www.instagram.com/casa_ribelle/",
+    "pizzas": {
+      "pablo": {
+        "type": "Margherita",
+        "price": 9.9
+      },
+      "felix": {
+        "type": "Ortolana",
+        "price": 13.9
+      }
+    },
+    "gq": {
+      "pablo": 8.7,
+      "felix": null
+    },
+    "vo": {
+      "pablo": 9,
+      "felix": null
+    },
+    "notes": "Review coming soon...",
+    "pictures": [
+      {
+        "filename": "casa_ribelle_1.png",
+        "caption": "Margherita",
+        "date": "Oktober 2025"
+      }
+    ]
+  },
+  "0005": {
+    "id": "0005",
+    "name": "Vesuvio Lounge",
+    "location": "Freiburg",
+    "dateLastVisited": "November 2025",
+    "dateFirstVisited": null,
+    "website": "https://www.instagram.com/explore/locations/303213962866753/eiscafe-vesuvio-freiburg/?hl=de",
+    "pizzas": {
+      "pablo": {
+        "type": "Neapolana",
+        "price": 14.5
+      },
+      "felix": {
+        "type": "Primavera",
+        "price": 13.5
+      }
+    },
+    "gq": {
+      "pablo": null,
+      "felix": null
+    },
+    "vo": {
+      "pablo": null,
+      "felix": null
+    },
+    "notes": "Review coming soon...",
+    "pictures": [
+      {
+        "filename": "vesuvio_1.png",
+        "caption": "Primavera",
+        "date": "Oktober 2025"
+      },
+      {
+        "filename": "vesuvio_2.png",
+        "caption": "Neapolana",
+        "date": "Oktober 2025"
+      }
+    ]
+  },
+  "0006": {
+    "id": "0006",
+    "name": "Strombolicchio",
+    "location": "Freiburg",
+    "dateLastVisited": "To be reviewed",
+    "dateFirstVisited": null,
+    "website": "https://strombolicchio.de/",
+    "pizzas": {
+      "pablo": {
+        "type": null,
+        "price": null
+      },
+      "felix": {
+        "type": null,
+        "price": null
+      }
+    },
+    "gq": {
+      "pablo": null,
+      "felix": null
+    },
+    "vo": {
+      "pablo": null,
+      "felix": null
+    },
+    "notes": "Review coming soon...",
+    "pictures": [
+    ]
+  }
+}
