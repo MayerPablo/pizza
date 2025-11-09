@@ -21,8 +21,8 @@
       "felix": 5.0
     },
     "vo": {
-      "pablo": 5.0,
-      "felix": 5.0
+      "pablo": 10.0,
+      "felix": 10.0
     },
     "notes": "This is the reference pizza for our rating system. All other pizzas are compared to this baseline.",
     "pictures": [
@@ -137,8 +137,8 @@
     "id": "0004",
     "name": "Casa Ribelle",
     "location": "Freiburg",
-    "dateLastVisited": "Oktober 2025",
-    "dateFirstVisited": "Oktober 2025",
+    "dateLastVisited": "October 2025",
+    "dateFirstVisited": "October 2025",
     "website": "https://www.instagram.com/casa_ribelle/",
     "pizzas": {
       "pablo": {
@@ -152,18 +152,18 @@
     },
     "gq": {
       "pablo": 8.7,
-      "felix": null
+      "felix": 9.0
     },
     "vo": {
-      "pablo": 9,
-      "felix": null
+      "pablo": 9.0,
+      "felix": 9.1
     },
-    "notes": "Review coming soon...",
+    "notes": "[October 2025] A rather new Pizzeria located in the very centre of the student life in Freiburg right next to the Stadttheater. The Pizza is well made and definetly one of the better options in Freiburg while being very affordable.",
     "pictures": [
       {
         "filename": "casa_ribelle_1.png",
         "caption": "Margherita",
-        "date": "Oktober 2025"
+        "date": "October 2025"
       }
     ]
   },
@@ -185,24 +185,24 @@
       }
     },
     "gq": {
-      "pablo": null,
-      "felix": null
+      "pablo": 8.5,
+      "felix": 8.7
     },
     "vo": {
-      "pablo": null,
-      "felix": null
+      "pablo": 9.0,
+      "felix": 9.2
     },
-    "notes": "Review coming soon...",
+    "notes": "[October 2025] Good texture on the bottom, outstanding bread taste for the dough. Crust was rather thin for neapolitanian style Pizza. For the Neapolana the sausage filling was overpowerign in flavour.",
     "pictures": [
       {
         "filename": "vesuvio_1.png",
         "caption": "Primavera",
-        "date": "Oktober 2025"
+        "date": "October 2025"
       },
       {
         "filename": "vesuvio_2.png",
         "caption": "Neapolana",
-        "date": "Oktober 2025"
+        "date": "October 2025"
       }
     ]
   },
